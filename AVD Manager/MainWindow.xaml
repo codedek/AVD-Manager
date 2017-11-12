@@ -1,0 +1,55 @@
+﻿<Window x:Class="AVD_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AVD_Manager"
+        mc:Ignorable="d"
+        Title="AVD Launcher"
+        Height="320" Width="480"
+        MinHeight="320" MinWidth="480">
+
+    <Grid Margin="8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <!--1-->
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="auto"/>
+            <!--3-->
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="auto"/>
+            <!--5-->
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="auto"/>
+            <!--7-->
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="1" Content="SDK Directory:"/>
+        <TextBox x:Name="edtSdk" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="2"/>
+        <Button Grid.Column="7" Grid.Row="2" Content="Select" Click="OnSelectSdkClicked" Padding="4"/>
+
+        <Label Grid.Column="0" Grid.Row="4" Content="AVD Directory:"/>
+        <TextBox x:Name="edtAvd" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="5"/>
+        <Button Grid.Column="7" Grid.Row="5" Content="Select" Click="OnSelectAvdClicked" Padding="4"/>
+
+        <ListBox x:Name="lsbAvds" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="7"/>
+
+        <!--<Button Grid.Column="1" Grid.Row="9" Content="Reset" Click="OnResetClicked" Padding="4"/>-->
+        <!--<Button Grid.Column="3" Grid.Row="9" Content="Create" Click="OnCreateClicked" Padding="4"/>-->
+        <Button Grid.Column="5" Grid.Row="9" Content="Remove" Click="OnRemoveClicked" Padding="4"/>
+        <Button Grid.Column="7" Grid.Row="9" Content="Launch" Click="OnLaunchClicked" Padding="4"/>
+    </Grid>
+</Window>
